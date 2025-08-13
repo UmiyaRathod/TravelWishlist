@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+
+      position: relative;
+
+    }
+
+    .back-button {
+
+      position: absolute;
+
+      left: 20px;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      background-color: #ff9800;
+
+      color: white;
+
+      border: none;
+
+      padding: 8px 15px;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+      transition: background-color 0.3s ease;
+
+    }
+
+
+
+    .back-button:hover {
+
+      background-color: #e68a00;
+
+    }
+
+    .content-section {
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .destination-card {
+      display: flex;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .destination-image {
+      flex: 1;
+      max-width: 300px;
+      overflow: hidden;
+    }
+
+    .destination-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .destination-details {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .destination-details h3 {
+      margin-top: 0;
+    }
+
+    .destination-actions {
+
+      margin-top: 15px;
+
+    }
+
+
+
+    .destination-actions button {
+
+      background-color: #0288d1;
+
+      color: white;
+
+      border: none;
+
+      padding: 8px 15px;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      transition: background-color 0.3s ease;
+
+    }
+
+
+
+    .destination-actions button:hover {
+
+      background-color: #026aa7;
+
+    }
+
+    .wishlist-button {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .wishlist-button:hover {
+      background-color: #026aa7;
+    }
+
+    #wishlist-count {
+      font-weight: bold;
+    }
+  </style>
+  <title>Beach Destinations</title>
+</head>
+
+<body>
+  <header>
+    <a href="choose_destination.html" class="back-button" aria-label="Go back to Choose Destination">
+
+      ← Back
+
+    </a>
+    <h1>Welcome to Beach Destinations</h1>
+    <p>Experience the beauty of sandy shores and turquoise waters.</p>
+
+    <button onclick="window.location.href='wishlist.html'" class="wishlist-button">
+      View Wishlist (<span id="wishlist-count">0</span>)
+    </button>
+  </header>
+
+  <div class="content-section">
+    <h2>Popular Beach Destinations</h2>
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="images/maldives.jpg" alt="Maldives">
+      </div>
+      <div class="destination-details">
+        <h3>Maldives</h3>
+        <p>Crystal-clear waters, overwater bungalows, and vibrant marine life await you in the Maldives.</p>
+        <p>Expected Priimages/ce: $3000</p>
+        <div class="destination-actions">
+          <button onclick="addToWishlist('Maldives', 3000)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="images/bora_bora.jpg" alt="Bora Bora">
+      </div>
+      <div class="destination-details">
+        <h3>Bora Bora</h3>
+        <p>Experience the ultimate paradise with its pristine lagoons and luxurious overwater bungalows.</p>
+        <p>Expected Price: $3500</p>
+        <div class="destination-actions">
+          <button onclick="addToWishlist('Bora Bora', 3500)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ............................................... ... -->
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="images/maui.jpg" alt="Maui">
+      </div>
+      <div class="destination-details">
+        <h3>Maui, Hawaii</h3>
+        <p>Discover the beauty of Hawaii's second-largest island with its diverse landscapes and culture.</p>
+        <p>Expected Price: $2800</p>
+        <div class="destination-actions">
+          <button onclick="addToWishlist('Maui, Hawaii', 2800)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ............................................... ... -->
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="images/Turks & Caicos.jpg" alt="Turks & Caicos">
+      </div>
+      <div class="destination-details">
+        <h3>Turks & Caicos</h3>
+        <p>Discover white sandy beaches meet crystal-clear turquoise waters. Immerse yourself in luxury and natural
+          beauty, creating memories that will linger long after the sun sets.</p>
+        <p>Expected Price: $3700</p>
+        <div class="destination-actions">
+          <button onclick="addToWishlist('Turks & Caicos', 3700)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ............................................... ... -->
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="images/Railay Beach.jpg" alt="Railay Beach">
+      </div>
+      <div class="destination-details">
+        <h3>Railay Beach, Andaman Sea</h3>
+        <p>Escape to Railay Beach, a hidden gem where towering limestone cliffs embrace pristine shores. Dive into
+          adventure or bask in tranquil relaxation, surrounded by breathtaking landscapes that redefine paradise.</p>
+        <p>Expected Price: $4200</p>
+        <div class="destination-actions">
+          <button onclick="addToWishlist('Railay Beach, Andaman Sea', 400)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ............................................... ... -->
+
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="images/St. Lucia.jpg" alt="St. Lucia">
+      </div>
+      <div class="destination-details">
+        <h3>St. Lucia, Caribbean</h3>
+        <p>Indulge in the allure of St. Lucia, where lush rainforests frame the iconic Pitons, and golden beaches caress
+          the azure Caribbean waters. A symphony of adventure and relaxation awaits, promising an unforgettable escape
+          in this tropical haven</p>
+        <p>Expected Price: $4650</p>
+        <div class="destination-actions">
+          <button onclick="addToWishlist('St. Lucia, Caribbean', 4650)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ............................................... ... -->
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="images/U.S. Virgin Islands.jpg" alt="U.S. Virgin Islands">
+      </div>
+      <div class="destination-details">
+        <h3>U.S. Virgin Islands</h3>
+        <p> Dive into a world of vibrant culture, water adventures, and relaxation, creating memories that linger long
+          after your tan fades.</p>
+        <p>Expected Price: $3400</p>
+        <div class="destination-actions">
+          <button onclick="addToWishlist('U.S. Virgin Islands', 3400)">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      // JavaScript code to handle the wishlist
+      function addToWishlist(destination, price) {
+        const item = { destination, price };
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        wishlist.push(item);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        alert('Item added to wishlist.');
+
+        updateWishlistCount();
+      }
+
+      function updateWishlistCount() {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        document.getElementById('wishlist-count').textContent = wishlist.length;
+      }
+
+      window.onload = function () {
+        updateWishlistCount();
+      };
+    </script>
+
+
+  </div>
+</body>
+
+</html>

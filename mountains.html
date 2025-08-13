@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+
+            position: relative;
+
+        }
+
+        .back-button {
+
+            position: absolute;
+
+            left: 20px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            background-color: #ff9800;
+
+            color: white;
+
+            border: none;
+
+            padding: 8px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+
+
+        .back-button:hover {
+
+            background-color: #e68a00;
+
+        }
+
+        .content-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .destination-card {
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .destination-image {
+            flex: 1;
+            max-width: 300px;
+            overflow: hidden;
+        }
+
+        .destination-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .destination-details {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .destination-details h3 {
+            margin-top: 0;
+        }
+
+        .destination-actions {
+
+            margin-top: 15px;
+
+        }
+
+
+
+        .destination-actions button {
+
+            background-color: #0288d1;
+
+            color: white;
+
+            border: none;
+
+            padding: 8px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+
+
+        .destination-actions button:hover {
+
+            background-color: #026aa7;
+
+        }
+
+        .wishlist-button {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .wishlist-button:hover {
+            background-color: #026aa7;
+        }
+
+        #wishlist-count {
+            font-weight: bold;
+        }
+    </style>
+    <title>Mountain Destinations</title>
+</head>
+
+<body>
+    <header>
+        <a href="choose_destination.html" class="back-button" aria-label="Go back to Choose Destination">
+
+            ← Back
+
+        </a>
+        <h1>Welcome to Mountain Destinations</h1>
+        <p>Embrace the tranquility and majesty of the world's highest peaks.</p>
+
+        <button onclick="window.location.href='wishlist.html'" class="wishlist-button">
+            View Wishlist (<span id="wishlist-count">0</span>)
+        </button>
+    </header>
+
+    <div class="content-section">
+        <h2>Explore Majestic Mountain Ranges</h2>
+
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/swiss_alps.JPG" alt="Swiss Alps">
+            </div>
+            <div class="destination-details">
+                <h3>Swiss Alps</h3>
+                <p>Experience the charm of the Swiss Alps with its stunning peaks, charming villages, and world-class
+                    skiing.
+                </p>
+                <p>Expected Price: $2500</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Swiss Alps', 2500)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ................................................ -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/rocky_mountains.jpg" alt="Rocky Mountains">
+            </div>
+            <div class="destination-details">
+                <h3>Rocky Mountains</h3>
+                <p>Discover the rugged beauty of the Rocky Mountains with its diverse wildlife and outdoor adventures.
+                </p>
+                <p>Expected Price: $2200</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Rocky Mountains', 2200)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ................................................ -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/himalayas.jpg" alt="Himalayas">
+            </div>
+            <div class="destination-details">
+                <h3>Himalayas</h3>
+                <p>Embark on a spiritual and adventurous journey in the breathtaking Himalayan mountain range.</p>
+                <p>Expected Price $2200</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('>Himalayas', 2200)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ................................................ -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/patagonia.jpg" alt="Patagonia">
+            </div>
+            <div class="destination-details">
+                <h3>Patagonia</h3>
+                <p>Discover the untouched wilderness and dramatic landscapes of Patagonia in South America.</p>
+                <p>Expected Price: $2800</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Patagonia', 2800)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ................................................ -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Mount Logan.jpg" alt="Mount Logan">
+            </div>
+            <div class="destination-details">
+                <h3>Mount Logan</h3>
+                <p>Embark on an awe-inspiring journey to the majestic heights of Mount Logan, where the allure of
+                    untouched
+                    wilderness meets the thrill of conquering North America's tallest peak, creating an unforgettable
+                    odyssey for
+                    the daring souls who seek to touch the sky.</p>
+                <p>Expected Price: $2600</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Mount Logan', 2650)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ................................................ -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Jotunheimen Mountains.jpg" alt="Jotunheimen Mountains">
+            </div>
+            <div class="destination-details">
+                <h3>Jotunheimen Mountains</h3>
+                <p>Discover Nordic paradise in the Jotunheimen Mountains - a realm of towering peaks, glacial lakes, and
+                    endless
+                    adventure.</p>
+                <p>Expected Price: $2500</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Jotunheimen Mountains', 2500)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ................................................ -->
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Mount Kilimanjaro.jpg" alt="Mount Kilimanjaro">
+            </div>
+            <div class="destination-details">
+                <h3>Mount Kilimanjaro</h3>
+                <p>Ascend to the roof of Africa and conquer your dreams atop Mount Kilimanjaro, where breathtaking
+                    vistas and
+                    untamed beauty redefine the meaning of awe-inspiring adventure.</p>
+                <p>Expected Price: $2500</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Mount Kilimanjaro', 2500)">Add to Wishlist</button>
+                </div>
+            </div>
+
+
+            <script>
+                // JavaScript code to handle the wishlist
+                function addToWishlist(destination, price) {
+                    const item = { destination, price };
+                    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                    wishlist.push(item);
+                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    alert('Item added to wishlist.');
+
+                    updateWishlistCount();
+                }
+
+                function updateWishlistCount() {
+                    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                    document.getElementById('wishlist-count').textContent = wishlist.length;
+                }
+
+                window.onload = function () {
+                    updateWishlistCount();
+                };
+            </script>
+
+        </div>
+        <!-- ................................................ -->
+
+</body>
+
+</html>

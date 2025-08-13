@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+
+            position: relative;
+
+        }
+
+        .back-button {
+
+            position: absolute;
+
+            left: 20px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            background-color: #ff9800;
+
+            color: white;
+
+            border: none;
+
+            padding: 8px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+
+
+        .back-button:hover {
+
+            background-color: #e68a00;
+
+        }
+
+        .content-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .destination-card {
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .destination-image {
+            flex: 1;
+            max-width: 300px;
+            overflow: hidden;
+        }
+
+        .destination-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .destination-details {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .destination-details h3 {
+            margin-top: 0;
+        }
+
+        .destination-actions {
+
+            margin-top: 15px;
+
+        }
+
+
+
+        .destination-actions button {
+
+            background-color: #0288d1;
+
+            color: white;
+
+            border: none;
+
+            padding: 8px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+
+
+        .destination-actions button:hover {
+
+            background-color: #026aa7;
+
+        }
+
+        .wishlist-button {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .wishlist-button:hover {
+            background-color: #026aa7;
+        }
+
+        #wishlist-count {
+            font-weight: bold;
+        }
+    </style>
+    <title>Deserts Destinations</title>
+</head>
+
+
+
+<body>
+    <header>
+
+        <a href="choose_destination.html" class="back-button" aria-label="Go back to Choose Destination">
+
+            ← Back
+
+        </a>
+        <h1>Welcome to Deserts Destinations</h1>
+        <p>"Journey to the Arid Beauty: Desert Destinations Unveiled"</p>
+
+        <button onclick="window.location.href='wishlist.html'" class="wishlist-button">
+            View Wishlist (<span id="wishlist-count">0</span>)
+        </button>
+    </header>
+
+    <div class="content-section">
+        <h2>Popular Desert Destinations</h2>
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Sahara Desert.jpg" alt="Sahara Desert, Africa">
+            </div>
+            <div class="destination-details">
+                <h3>Sahara Desert, Africa</h3>
+                <p>The World's Hottest Playground: Sahara's Golden Dunes.</p>
+                <p>Expected Price: $3000</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Sahara Desert, Africa', 3000)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Atacama Desert.jpg" alt="Atacama Desert, Chile">
+            </div>
+            <div class="destination-details">
+                <h3>Atacama Desert, Chile</h3>
+                <p>Stargazer's Paradise: Atacama's Celestial Spectacle.</p>
+                <p>Expected Price: $3500</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Atacama Desert, Chile', 3500)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Wadi Rum.jpg" alt="Wadi Rum">
+            </div>
+            <div class="destination-details">
+                <h3>Wadi Rum, Jordan</h3>
+                <p>The Valley of the Moon: Red Sands and Bedouin Traditions.</p>
+                <p>Expected Price: $2800</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Wadi Rum, Jordan', 2800)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ............................................... ... -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Namib Desert.jpg" alt="Namib Desert">
+            </div>
+            <div class="destination-details">
+                <h3>Namib Desert, Namibia</h3>
+                <p>Where Dunes Touch the Sky: Namib's Otherworldly Beauty.</p>
+                <p>Expected Price: $3700</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Namib Desert, Namibia', 3700)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ............................................... ... -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Death Valley.jpg" alt="Death Valley">
+            </div>
+            <div class="destination-details">
+                <h3>Death Valley, USA</h3>
+                <p>Land of Extremes: Death Valley's Scorching Heat and Stark Beauty.</p>
+                <p>Expected Price: $4200</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('Death Valley, USA', 4200)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ............................................... ... -->
+
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/Dubai Desert.jpg" alt="Dubai Desert">
+            </div>
+            <div class="destination-details">
+                <h3>Dubai Desert, UAE</h3>
+                <p>Luxury in the Sands: Dubai's Desert Oasis.</p>
+                <p>Expected Price: $4650</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('>Dubai Desert, UAE', 4650)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ............................................... ... -->
+
+        <div class="destination-card">
+            <div class="destination-image">
+                <img src="images/White Sands.jpg" alt="White Sands">
+            </div>
+            <div class="destination-details">
+                <h3>White Sands, New Mexico, USA</h3>
+                <p>Sledding on Moonlight: White Sands' Unique Gypsum Dunes</p>
+                <p>Expected Price: $3400</p>
+                <div class="destination-actions">
+                    <button onclick="addToWishlist('White Sands, New Mexico, USA', 3400)">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more destination cards with "Add to Wishlist" buttons here -->
+    </div>
+
+    <script>
+        // JavaScript code to handle the wishlist
+        function addToWishlist(destination, price) {
+            const item = { destination, price };
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist.push(item);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            alert('Item added to wishlist.');
+
+            updateWishlistCount();
+        }
+
+        function updateWishlistCount() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            document.getElementById('wishlist-count').textContent = wishlist.length;
+        }
+
+        window.onload = function () {
+            updateWishlistCount();
+        };
+    </script>
+</body>
+
+</html>
